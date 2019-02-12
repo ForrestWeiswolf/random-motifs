@@ -12,3 +12,10 @@ body {
   padding: 1em;
   font-weight: 700;
 }
+
+footer{
+  bottom: 0px;
+  width: 100%;
+  /* text-align: center; */
+  position: fixed;
+}
