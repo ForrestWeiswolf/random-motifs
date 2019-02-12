@@ -23,9 +23,9 @@ const createGetNote = (baseIndex, scale) => () => {
   return notes[index];
 }
 
-const generate = (key = '', scaleType = '') => {
-  const baseIndex = notes.indexOf(key.toUpperCase()) || 0;
-  const scale = scales[scaleType] || scales.chromatic;
+const generate = (key = 0, scaleType = 'chromatic') => {
+  const baseIndex = parseInt(key, 10);
+  const scale = scales[scaleType];
 
   const len = Math.floor(Math.random() * (MAX - MIN)) + MIN;
   const getNote = createGetNote(baseIndex, scale);
