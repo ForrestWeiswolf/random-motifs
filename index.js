@@ -29,5 +29,6 @@ const generate = (key = '', scaleType = '') => {
   }, getNote);
 }
 
-// const motif = generate(key, scaleType);
-// console.log('Motif: ', motif.join(', '));
+document.getElementById('generate').addEventListener('click', () => {
+  console.log(generate())
+})
