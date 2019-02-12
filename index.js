@@ -30,5 +30,6 @@ const generate = (key = '', scaleType = '') => {
 }
 
 document.getElementById('generate').addEventListener('click', () => {
-  console.log(generate())
+  const motif = generate().join(', ');
+  document.getElementById('motif').textContent = motif;
 })
