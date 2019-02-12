@@ -2,29 +2,50 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width initial-scale=1.0">
-	<title>Random motifs</title>
-	<link rel="stylesheet" type="text/css" href="./style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Random motifs</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
 <body>
-	<div id="motif"></div>
-	<div id="controls">
-		<input type="text" name="key" id="key" placeholder="C#"></input>
-		<input type="text" name="scale" id="scale" placeholder="minor"></input>
-		<button id="generate">Generate a motif</button>
-		<div>
-			<small>(Will default to chromatic.)</small>
-		</div>
-	</div>
+    <div id="motif"></div>
+    <div id="controls">
+        <select name="key" id="key">
+            <option value="0" selected>C</option>
+            <option value="1">C#</option>
+            <option value="2">D</option>
+            <option value="3">D#</option>
+            <option value="4">E</option>
+            <option value="5">F</option>
+            <option value="6">F#</option>
+            <option value="7">G</option>
+            <option value="8">G#</option>
+            <option value="9">A</option>
+            <option value="10">A#</option>
+            <option value="11">B</option>
+        </select>
+        <select name="scale" id="scale">
+            <option value="major" selected>Major</option>
+            <option value="minor" selected>Minor</option>
+            <option value="blues" selected>Blues</option>
+            <option value="halfWhole" selected>Octatonic (Half-Whole)</option>
+            <option value="wholeHalf" selected>Octatonic (Whole-Half)</option>
+            <option value="wholeTone" selected>Whole Tone</option>
+            <option value="chromatic" selected>Chromatic</option>
+        </select>
+        <button id="generate">Generate a motif</button>
+        <div>
+            <small>(Will default to chromatic.)</small>
+        </div>
+    </div>
 
-	<footer>
-		<small>
-			<a href="https://fawm.org/forums/topic/9083/">Code to generate random motifs by Saumera; UI by Forrest Wolf</a>
-		</small>
-	</footer>
-	<script src="./index.js"></script>
+    <footer>
+        <small>
+            <a href="https://fawm.org/forums/topic/9083/">Code to generate random motifs by Saumera; UI by Forrest Wolf</a>
+        </small>
+    </footer>
+    <script src="./index.js"></script>
 
 </body>
 
