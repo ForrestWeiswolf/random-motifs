@@ -12,15 +12,20 @@ const scales = {
   chromatic: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
 }
 
+// The % operator isn't true modulo (it's remainder), so this will
+// ensure that the result is a positive integer.
+const mod = (left, right) => ((left % right) + right) % right;
+
 const getRand = (array) => array[Math.floor(Math.random() * (array.length))];
 
-const createGetNote = (baseIndex, scale) => {
-  return () => notes[(baseIndex + getRand(scale)) % notes.length];
+const createGetNote = (baseIndex, scale) => () => {
+  const index = mod(baseIndex + getRand(scale), notes.length)
+  return notes[index];
 }
 
-const generate = (key = '', scaleType = '') => {
-  const baseIndex = notes.indexOf(key.toUpperCase()) || 0;
-  const scale = scales[scaleType] || scales.chromatic;
+const generate = (key = 0, scaleType = 'chromatic') => {
+  const baseIndex = parseInt(key, 10);
+  const scale = scales[scaleType];
 
   const len = Math.floor(Math.random() * (MAX - MIN)) + MIN;
   const getNote = createGetNote(baseIndex, scale);
